@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'basics';
+  title = 'AppComponent';
+  disabled = true;
+  text = "";
+  clicked = false;
+  textButton = "Oprimeme joder!!!";
+
+  onInputUpdate(event: Event){
+    this.text = (<HTMLInputElement>event.target).value;
+    this.disabled = this.text.length <= 0;
+  }
+
+  onClickButton(){
+    this.clicked = !this.clicked;
+    this.textButton = this.clicked ? 'Desomprime Ome' : "Oprimeme joder!!!";
+  }
 }
