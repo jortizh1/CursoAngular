@@ -10,15 +10,19 @@ export class AppComponent {
   disabled = true;
   text = "";
   clicked = false;
-  textButton = "Oprimeme joder!!!";
+  //textButton = "Oprimeme joder!!!";
+  textButton = "Click!!!";
+  numbers =  [1, 2, 3, 4];
 
-  onInputUpdate(event: Event){
-    this.text = (<HTMLInputElement>event.target).value;
+  onInputUpdate(){
+    //this.text = (<HTMLInputElement>event.target).value;
     this.disabled = this.text.length <= 0;
   }
 
   onClickButton(){
-    this.clicked = !this.clicked;
-    this.textButton = this.clicked ? 'Desomprime Ome' : "Oprimeme joder!!!";
+    this.text = "";
+    this.onInputUpdate();
+    //this.clicked = !this.clicked;    
+    //this.textButton = this.clicked ? 'Desomprime Ome' : "Oprimeme joder!!!";
   }
 }

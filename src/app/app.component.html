@@ -5,8 +5,18 @@
     <!--<app-server></app-server>-->
     <!--<div app-server></div>-->
     <!--<div class="app-server"></div>-->
-    <input class="form-control" type="text" (input)="onInputUpdate($event)">
+    <!--<input class="form-control" type="text" (input)="onInputUpdate($event)">-->
+    <!--<p> El Contenido escrito es: {{ text }}</p>-->
+    <input class="form-control" type="text" [(ngModel)]="text" (input)="onInputUpdate($event)">    
     <button class="btn btn-primary" [disabled]="disabled" (click)="onClickButton()">{{textButton}}</button>
-    <p> El Contenido escrito es: {{ text }}</p>
-    <input class="form-control" type="text" [(ngModel)]="text">
+    <hr>
+    <p *ngIf ="disabled" style="color:red;">El boton esta inactivo</p>
+    <p *ngIf ="!disabled" style="color:green;">El boton esta activo</p>
+    <hr>
+    <h3>Contando Numeros...</h3>
+    <div *ngFor="let i of numbers">
+        <p style="color:fuchsia">
+            Yo soy el numero {{i}}
+        </p>
+    </div>
 </div>
