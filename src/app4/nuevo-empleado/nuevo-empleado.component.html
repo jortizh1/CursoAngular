@@ -1,0 +1,12 @@
+<label> Nombre Empleado</label>
+<input type="text" class="form-control" [(ngModel)]="nombre">
+<label> Edad Empleado</label>                    
+<input type="number" class="form-control" [(ngModel)]="edad">                    
+<label> Cargo Empleado</label>                    
+<select type="text" class="form-control" [(ngModel)]="cargo">
+  <option value="Ingeniero"> Ingeniero </option>
+  <option value="Secretario"> Secretario </option>
+  <option value="Gerente"> Gerente </option>                                 
+</select>
+<hr>
+<button class="btn btn-primary" (click)="agregarEmpleado();">Agregar Empleado</button>

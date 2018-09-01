@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <app-nuevo-empleado (empleadoCreado)="empleadoAgregado($event);"></app-nuevo-empleado>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <div>
+                        <app-empleado *ngFor="let empleado of empleados" [emp]="empleado"></app-empleado>                        
+                    </div>
+                    <!--<div *ngFor="let emp of empleados">
+                            <div class="panel panel-default">
+                                    <div class="panel-heading"> {{ emp.nombre }}  </div>
+                                    <div class="panel-body"> cargo: {{ emp.cargo }}, edad: {{ emp.edad }}  </div>
+                            </div>
+                    </div>-->                    
+            </div>
+    </div>
+</div>
