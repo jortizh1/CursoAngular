@@ -2,12 +2,12 @@
     <div class="row">
             <div class="col-md-6">
                 <div>
-                    <app-nuevo-empleado (empleadoCreado)="empleadoAgregado($event);"></app-nuevo-empleado>
+                    <app-nuevo-empleado></app-nuevo-empleado>
                 </div>
             </div>
             <div class="col-md-6">
                     <div>
-                        <app-empleado *ngFor="let empleado of empleados" [emp]="empleado"></app-empleado>                        
+                        <app-empleado *ngFor="let empleado of empleados let i = index" [emp]="empleado" [id]="i"></app-empleado>                        
                     </div>
                     <!--<div *ngFor="let emp of empleados">
                             <div class="panel panel-default">

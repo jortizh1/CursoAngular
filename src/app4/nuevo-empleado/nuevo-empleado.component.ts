@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { EmpleadoService } from '../empleado.service';
 
 
 @Component({
@@ -10,18 +11,21 @@ export class NuevoEmpleadoComponent implements OnInit {
   nombre = '';
   edad = 18;
   cargo = '';
-  @Output() empleadoCreado = new EventEmitter<{nombre: string, edad: number, cargo: string}>();
+  estado = 'Activo';
+  //@Output() empleadoCreado = new EventEmitter<{nombre: string, edad: number, cargo: string}>();
 
-  constructor() { }
+
+  constructor(private empleadoService: EmpleadoService) { }
 
   ngOnInit() {
   }
 
   agregarEmpleado(){
-    this.empleadoCreado.emit({
+    this.empleadoService.agregarEmpleado({
       nombre:this.nombre,
       edad:this.edad,
-      cargo:this.cargo
+      cargo:this.cargo,
+      estado: this.estado
     });
   }
 }

@@ -5,18 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { NuevoEmpleadoComponent } from './nuevo-empleado/nuevo-empleado.component';
+import { EmpleadoService } from './empleado.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadoComponent,
-    NuevoEmpleadoComponent
+    NuevoEmpleadoComponent   
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EmpleadoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,15 @@
 <div>
     <div class="panel panel-default">
             <div class="panel-heading"> {{ emp.nombre }}  </div>
-            <div class="panel-body"> cargo: {{ emp.cargo }}, edad: {{ emp.edad }}  </div>
+            <div class="panel-body"> Cargo: {{ emp.cargo }}, edad: {{ emp.edad }}  </div>
+            <div class="panel-body"> Estado: {{ emp.estado }} </div>
+            <div class="btn-group btn-group-justified" style="text-align:right;" (click)="actualizarEstado()">
+                <button class="btn btn-primary" style="width: 50%">
+                    <strong *ngIf="emp.estado == 'Activo' else noActivo">Desactivar</strong>
+                    <ng-template #noActivo>
+                        <strong>Activar</strong>                        
+                    </ng-template>
+                </button>
+            </div>
     </div>
 </div>
