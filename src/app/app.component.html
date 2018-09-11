@@ -1,22 +1,15 @@
 <div class="container">
-    <div style="text-align:center;">
-        <h1>Hola Mundo {{ title }}!!</h1>
+    <div>
+        <ul class="nav nav-tabs">
+            <li role="presentation">
+                <a href="/">Home</a>
+            </li>
+            <li role="presentation">
+                <a href="/employees">Check Employees</a>
+            </li>
+        </ul>
     </div>
-    <!--<app-server></app-server>-->
-    <!--<div app-server></div>-->
-    <!--<div class="app-server"></div>-->
-    <!--<input class="form-control" type="text" (input)="onInputUpdate($event)">-->
-    <!--<p> El Contenido escrito es: {{ text }}</p>-->
-    <input class="form-control" type="text" [(ngModel)]="text" (input)="onInputUpdate($event)">    
-    <button class="btn btn-primary" [disabled]="disabled" (click)="onClickButton()">{{textButton}}</button>
-    <hr>
-    <p *ngIf ="disabled" style="color:red;">El boton esta inactivo</p>
-    <p *ngIf ="!disabled" style="color:green;">El boton esta activo</p>
-    <hr>
-    <h3>Contando Numeros...</h3>
-    <div *ngFor="let i of numbers">
-        <p style="color:fuchsia">
-            Yo soy el numero {{i}}
-        </p>
+    <div style="margin-top: 20px;">
+        <router-outlet></router-outlet>
     </div>
 </div>

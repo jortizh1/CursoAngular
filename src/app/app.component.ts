@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,23 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AppComponent';
-  disabled = true;
-  text = "";
-  clicked = false;
-  //textButton = "Oprimeme joder!!!";
-  textButton = "Click!!!";
-  numbers =  [1, 2, 3, 4];
+  //empleados: {nombre: string, edad: number, cargo: string, estado: string}[] = [];
 
-  onInputUpdate(){
-    //this.text = (<HTMLInputElement>event.target).value;
-    this.disabled = this.text.length <= 0;
+  constructor() { }
+
+  ngOnInit() {
+    
   }
 
-  onClickButton(){
-    this.text = "";
-    this.onInputUpdate();
-    //this.clicked = !this.clicked;    
-    //this.textButton = this.clicked ? 'Desomprime Ome' : "Oprimeme joder!!!";
-  }
+  /*empleadoAgregado(empleado:{nombre: string, edad: number, cargo: string }){
+    this.empleados.push({
+      nombre:empleado.nombre,
+      edad:empleado.edad,
+      cargo:empleado.cargo
+    });
+  }*/
 }
